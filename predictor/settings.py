@@ -1,19 +1,13 @@
 from pathlib import Path
 import os
-from django.core.exceptions import ImproperlyConfigured
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECRET_KEY configuration
-SECRET_KEY = os.environ.get('SECRET_KEY')
-if not SECRET_KEY:
-    raise ImproperlyConfigured("The SECRET_KEY environment variable is not set. Please set it in Vercel's environment variables.")
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-secret-key-here')  # Use env var for Vercel
 
-# DEBUG configuration
-DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'  # Default to False, set to True in development
+DEBUG = os.environ.get('DEBUG', 'True') == 'True'  # Default to True, False in production
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']  # Replace with your Vercel domain
+ALLOWED_HOSTS = ['*']  # Adjust to specific domains in production, e.g., ['your-vercel-app.vercel.app']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -72,6 +66,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
