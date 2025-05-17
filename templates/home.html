@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}Home - Heart Disease Predictor{% endblock %}
+{% block content %}
+<section class="hero-section text-center text-white py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Heart Disease Predictor</h1>
+        <p class="lead mb-4">Take control of your heart health with our advanced prediction tool.</p>
+        <a href="/heart/" class="btn btn-warning btn-lg text-uppercase fw-semibold px-5 py-3 mb-4">Click Here to Predict</a>
+    </div>
+</section>
+<section class="info-section py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center fw-bold mb-4">Facts About Heart Disease</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Global Impact</h5>
+                                <p class="card-text">Heart disease is the leading cause of death worldwide, claiming over 17 million lives annually, according to the WHO.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Risk Factors</h5>
+                                <p class="card-text">High blood pressure, high cholesterol, and smoking are major risk factors, contributing to 80% of heart disease cases.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Prevention</h5>
+                                <p class="card-text">Up to 80% of heart disease cases can be prevented through lifestyle changes like healthy eating and regular exercise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center fw-bold mb-4">Tips for a Healthy Heart</h2>
+                <div class="accordion" id="heartTipsAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tip1">
+                                Eat a Balanced Diet
+                            </button>
+                        </h2>
+                        <div id="tip1" class="accordion-collapse collapse show" data-bs-parent="#heartTipsAccordion">
+                            <div class="accordion-body">
+                                Include fruits, vegetables, whole grains, lean proteins, and healthy fats (like omega-3s from fish) to support heart health.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip2">
+                                Exercise Regularly
+                            </button>
+                        </h2>
+                        <div id="tip2" class="accordion-collapse collapse" data-bs-parent="#heartTipsAccordion">
+                            <div class="accordion-body">
+                                Aim for at least 150 minutes of moderate aerobic activity (e.g., brisk walking) or 75 minutes of vigorous activity weekly.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tip3">
+                                Manage Stress
+                            </button>
+                        </h2>
+                        <div id="tip3" class="accordion-collapse collapse" data-bs-parent="#heartTipsAccordion">
+                            <div class="accordion-body">
+                                Practice mindfulness, meditation, or yoga to reduce stress, which can elevate blood pressure and heart disease risk.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center fw-bold mb-4">Habits to Avoid for Heart Health</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Smoking:</strong> Smoking damages blood vessels and reduces oxygen supply, increasing heart attack risk.</li>
+                    <li class="list-group-item"><strong>Excessive Alcohol:</strong> Limit alcohol to one drink per day for women and two for men to avoid heart strain.</li>
+                    <li class="list-group-item"><strong>Sedentary Lifestyle:</strong> Avoid prolonged sitting; take breaks to move every 30 minutes to improve circulation.</li>
+                    <li class="list-group-item"><strong>High-Sugar Diets:</strong> Excess sugar can lead to obesity and diabetes, both linked to heart disease.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

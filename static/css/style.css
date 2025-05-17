@@ -1,0 +1,57 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
+}
+
+.btn-danger {
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-danger:hover {
+    transform: scale(1.05);
+    background-color: #c82333;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.accordion-button {
+    font-weight: 600;
+    color: #dc3545;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.list-group-item {
+    font-size: 1.1rem;
+    padding: 15px 20px;
+}
+
+.form-section .card {
+    border-radius: 10px;
+}
+
+.alert {
+    border-radius: 10px;
+}
+
+.form-control, .form-select {
+    border-radius: 5px;
+}
+
+.form-text {
+    font-size: 0.9rem;
+}

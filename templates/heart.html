@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Predict - Heart Disease Predictor{% endblock %}
+{% block content %}
+<section class="hero-section text-center text-white py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">Heart Disease Predictor</h1>
+        <p class="lead mb-4">Enter your health details to predict your heart disease risk.</p>
+    </div>
+</section>
+<section class="form-section py-5 bg-light">
+    <div class="container">
+        {% if context %}
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <div class="alert {% if context == 'have' %}alert-danger{% else %}alert-success{% endif %} text-center" role="alert">
+                    <h4 class="alert-heading">
+                        You {{ context }} heart disease.
+                    </h4>
+                    <p class="mb-0">Please consult a healthcare professional for a detailed diagnosis.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">Enter Your Details</h3>
+                        <form method="POST" action="/heart/">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-danger btn-lg btn-block w-100 mt-4">Predict</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
