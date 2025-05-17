@@ -8,7 +8,10 @@ from django.conf import settings
 
 # Load and train model once
 try:
-    df = pd.read_csv(os.path.join(settings.STATICFILES_DIRS[0], 'Heart_train.csv'))
+    csv_path = os.path.join(settings.STATICFILES_DIRS[0], 'Heart_train.csv')
+    if not os.path.exists(csv_path):
+        csv_path = os.path.join(settings.STATIC_ROOT, 'Heart_train.csv')
+    df = pd.read_csv(csv_path)
     data = df.values
     X = data[:, :-1]
     Y = data[:, -1].ravel()
