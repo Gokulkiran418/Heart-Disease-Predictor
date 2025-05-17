@@ -6,7 +6,7 @@ from .forms import HeartDiseaseForm
 import os
 from django.conf import settings
 
-# Load and train model once
+# Load and train model
 try:
     csv_path = os.path.join(settings.STATICFILES_DIRS[0], 'Heart_train.csv')
     if not os.path.exists(csv_path):
