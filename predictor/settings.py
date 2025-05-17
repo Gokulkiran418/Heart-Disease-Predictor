@@ -13,7 +13,7 @@ if not SECRET_KEY:
 # DEBUG configuration
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'  # Default to False, set to True in development
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'heartdiseasepredictor21.vercel.app']  # Replace with your Vercel domain
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']  # Replace with your Vercel domain
 
 INSTALLED_APPS = [
     'django.contrib.admin',
